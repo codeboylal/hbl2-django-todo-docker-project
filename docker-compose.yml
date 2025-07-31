@@ -1,0 +1,11 @@
+services:
+  django-todo:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: django-todo
+    ports:
+      - "8000:8000"
+    environment:
+      - ALLOWED_HOSTS=*
+    restart: unless-stopped
